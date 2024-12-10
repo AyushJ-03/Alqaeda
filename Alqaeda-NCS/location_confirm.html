@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Location</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .search-section {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        #map {
+            height: 500px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #ffb606;
+            text-decoration: none;
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Location Tracker</h1>
+    </header>
+    <main>
+        <section class="search-section">
+            <h2>Search Person in Campus</h2>
+            <input type="text" id="searchInput" class="search-input" placeholder="Enter name to search...">
+            <button id="searchButton" class="btn">Search</button>
+        </section>
+
+        <section class="map-section">
+            <h2>Campus Map</h2>
+            <div id="map"></div>
+        </section>
+
+        <section class="log-section">
+            <h2>Person Access Logs</h2>
+            <table id="logTable">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>User Name</th>
+                        <th>Action</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example log -->
+                    <tr>
+                        <td>2024-12-06 10:00:00</td>
+                        <td>John Doe</td>
+                        <td>Entered</td>
+                        <td>Main Gate</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Campus Tracker. All rights reserved. Contact <a href="mailto:support@campustracker.com">support@campustracker.com</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const map = L.map('map').setView([28.613216,77.359459], 20);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            }).addTo(map);
+
+            // Add a default marker
+            const marker = L.marker([28.613216,77.359459]).addTo(map);
+            marker.bindPopup('<b>Main Campus</b><br>JSS Academy Of Technical Education, Noida.').openPopup();
+
+            // Search functionality placeholder
+            document.getElementById('searchButton').addEventListener('click', () => {
+                const searchInput = document.getElementById('searchInput').value;
+                if (searchInput) {
+                    alert(`Searching for '${searchInput}'... (Feature not implemented yet)`);
+                } else {
+                    alert('Please enter a name to search.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

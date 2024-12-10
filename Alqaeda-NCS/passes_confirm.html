@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Generate Passes</title>
+        <link rel="stylesheet" href="try_style.css">
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link href="font-awesome.min.css" rel="stylesheet">
+        <link href="flaticon-set.css" rel="stylesheet">
+        <link href="bootsnav.css" rel="stylesheet">
+        <link href="responsive.css" rel="stylesheet">
+        <link href="ssmodel.css?$$REVISION$$" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="passes.css">
+        <script src="passes_2.js" defer></script>
+        <style>
+            .button_yellow_admi {
+                background: #ffb606;
+                border: none;
+                display: inline-block;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                margin-top: 10px;
+                padding: 8px 50px;
+                text-transform: uppercase;
+            }
+            textarea, input, select {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            .disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+        </style>
+        <script>
+            function handleRequestAccess() {
+                const requestButton = document.getElementById('requestAccess');
+                const generateButton = document.getElementById('generatePass');
+                requestButton.disabled = true;
+                generateButton.disabled = false;
+                alert('Request sent for verification. You can now generate the pass after approval.');
+            }
+
+            function toggleVehicleInput() {
+                const hasVehicle = document.getElementById('hasVehicle').checked;
+                const vehicleInput = document.getElementById('vehicleInput');
+                vehicleInput.style.display = hasVehicle ? 'block' : 'none';
+            }
+        </script>
+        <script src="https://kit.fontawesome.com/4987f37603.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <!-- Header -->
+            <header id="home">
+                <div class="wrap-sticky" style="height: 150px;">
+                    <nav class="navbar navbar-default attr-border navbar-sticky bootsnav on no-full">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <a class="navbar-brand" href="index.html">
+                                    <img src="https://jssatestoragenoida.blob.core.windows.net/blbcontainer/sdimages/logo.jpg" class="logo mt10" alt="Logo">
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <!-- Generate Guest Pass Section -->
+                <section class="section">
+                    <h2>👤 Generate a Guest Pass</h2>
+                    <form action="/generate-pass" method="post" class="form">
+                        <label for="guestName">Guest Name:</label>
+                        <input type="text" id="guestName" name="guestName" required>
+
+                        <label for="guestEmail">Guest Email:</label>
+                        <input type="email" id="guestEmail" name="guestEmail" required>
+
+                        <label for="aadharNumber">Aadhaar Card Number:</label>
+                        <input type="text" id="aadharNumber" name="aadharNumber" pattern="\d{12}" placeholder="Enter 12-digit Aadhaar number" required>
+
+                        <label>
+                            <input style="width: 15px; height: 15px;" type="checkbox" id="hasVehicle" name="hasVehicle" onclick="toggleVehicleInput()"> Vehicle (if any)
+                        </label>
+                        
+                        <div id="vehicleInput" style="display: none;">
+                            <label for="vehicleNumber">Vehicle Number Plate:</label>
+                            <input type="text" id="vehicleNumber" name="vehicleNumber" placeholder="Enter Vehicle Number (e.g., AB12CD3456)">
+                        </div>
+
+                        <label for="accessArea">Access Area:</label>
+                        <select id="accessArea" name="accessArea" required>
+                            <option value="library">Library</option>
+                            <option value="conferenceHall">Conference Hall</option>
+                            <option value="gym">Gym</option>
+                            <option value="restrictedLab">Restricted Lab</option>
+                        </select>
+
+                        <label for="reason">Reason for Visit:</label>
+                        <textarea id="reason" name="reason" rows="4" placeholder="Enter the purpose of visit..." required></textarea>
+
+                        <label for="validity">Validity Period:</label>
+                        <div>
+                            <label for="validityStart">Start Date & Time:</label>
+                            <input type="date" id="validityStart" name="validityStart" required>
+                            <input type="time" id="validityStartTime" name="validityStartTime" required>
+                        </div>
+                        <div>
+                            <label for="validityEnd">End Date & Time:</label>
+                            <input type="date" id="validityEnd" name="validityEnd" required>
+                            <input type="time" id="validityEndTime" name="validityEndTime" required>
+                        </div>
+
+                        <button type="button" id="requestAccess" class="btn btn-warning" onclick="handleRequestAccess()">Request Access</button>
+                        <button type="submit" id="generatePass" class="btn btn-primary disabled" disabled>Generate Pass</button>
+                    </form>
+                </section>
+
+                <!-- Manage Existing Passes Section -->
+                <section class="section">
+                    <h2>📋 Manage Existing Passes</h2>
+                    <form action="/search-pass" method="get" class="form">
+                        <label for="search">Enter Guest Name or Pass ID:</label>
+                        <input type="text" id="search" name="search" required>
+                        <button type="submit" class="btn btn-secondary">Search</button>
+                    </form>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pass ID</th>
+                                <th>Guest Name</th>
+                                <th>Email</th>
+                                <th>Access Area</th>
+                                <th>Validity</th>
+                                <th>Vehicle Number</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>12345</td>
+                                <td>John Doe</td>
+                                <td>john.doe@example.com</td>
+                                <td>Library</td>
+                                <td>2024-12-01 09:00 to 2024-12-02 18:00</td>
+                                <td>AB12CD3456</td>
+                                <td>
+                                    <form action="/delete-pass" method="post" class="inline-form">
+                                        <input type="hidden" name="passId" value="12345">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+            <footer class="text-light">
+                <div class="footer-bottom" style="margin-top: 40px !important;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-8">
+                                    <p>© Copyright 2024. All Rights Reserved by <a href="#">JSS Mahavidyapeetha</a></p>
+                                </div>
+                                <div class="col-md-4 center link mt10">
+                                    <a href="#"><i class="fa fa-envelope">&nbsp;</i>itsupport@jssaten.ac.in&nbsp;&nbsp;/&nbsp;&nbsp;<i class="fas fa-mobile-alt"></i> 0120-2400115 Ext. 221</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+:root {
+    /*Orange color, Blue color*/
+    /*--MenuBG-color: #E67817;
+    --MenuBG-hover: #0054A4;
+    --Footer-color: #E67817;
+    --Footer-link: #03173d;*/
+ 
+    /*Blue color, Orange color */
+    --MenuBG-color: #0054A4; 
+    --MenuBG-hover: #E67817;
+    --Footer-color: #03173d; 
+    --Footer-link: #E67817;
+    --white: #ffffff;
+}

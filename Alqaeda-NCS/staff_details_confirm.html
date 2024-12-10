@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management</title>
+    <link rel="stylesheet" href="try_style.css">
+    <!-- <link rel="shortcut icon" href="/assets/img/jssmvp-web/jssatem-favicon.jpg" type="image/x-icon"> -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome.min.css" rel="stylesheet">
+    <link href="flaticon-set.css" rel="stylesheet">
+    <link href="bootsnav.css" rel="stylesheet">
+    <link href="responsive.css" rel="stylesheet">
+    <link href="ssmodel.css?$$REVISION$$" rel="stylesheet">
+     <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+        .button_yellow_admi {
+            background: #ffb606 none repeat scroll 0 0;
+            border: medium none;
+            display: inline-block;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            margin-top: 10px;
+            padding: 8px 50px;
+            text-transform: uppercase;
+        }
+    </style> 
+    
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+      }
+      .container {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        /* background: #ffffff; */
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      h1, h2 {
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      label {
+        flex: 1 1 45%;
+        margin: 10px 0 5px;
+      }
+      input, select, button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .alert-container {
+        margin-top: 20px;
+      }
+      .alert-box {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      .staff-item {
+        margin-bottom: 15px;
+      }
+      .id-card {
+        background-color: #f0f0f0;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .id-card h3 {
+        margin: 0;
+      }
+    </style>
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f9;
+        }
+        .container {
+          width: 80%;
+          margin: 20px auto;
+          padding: 20px;
+          /* background: #ffffff; */
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+          text-align: center;
+        }
+        form {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+        label {
+          flex: 1 1 45%;
+          margin: 10px 0 5px;
+        }
+        input, select, button {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        button {
+          background-color: #007bff;
+          color: white;
+          cursor: pointer;
+        }
+        button:hover {
+          background-color: #0056b3;
+        }
+        .alert-container {
+          margin-top: 20px;
+        }
+        .alert-box {
+          background-color: #f8d7da;
+          color: #721c24;
+          padding: 10px;
+          border-radius: 5px;
+          margin-bottom: 10px;
+        }
+      </style>
+    <script src="https://kit.fontawesome.com/4987f37603.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <!-- Preloader Start -->
+        <div class="se-pre-con" style="display: none;"></div>
+        <!-- Preloader Ends -->
+        <!-- Header  ============================================= -->
+        <header id="home">
+            <!-- Start Navigation -->
+            <div class="wrap-sticky" style="height: 150px;">
+                <nav class="navbar navbar-default attr-border navbar-sticky bootsnav on no-full">
+                    <div class="container">
+                        <!-- Start Header Navigation -->
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="https://jssatestoragenoida.blob.core.windows.net/blbcontainer/sdimages/logo.jpg"
+                                    class="logo mt10" alt="Logo">
+                            </a>
+                        </div>
+                        <!-- End Header Navigation 
+             <h3 class="text-primary text-center mt30">JSS Science and Technology University</h3> -->
+                    </div>
+                </nav>
+            </div>
+            <!-- End Navigation -->
+        </header>
+        <!-- End Header -->
+
+<div class="container">
+  <h1>Staff Management System</h1>
+  <form id="staffForm">
+    <label for="staffId">Staff ID</label>
+    <input type="text" id="staffId" placeholder="Enter Staff ID" required>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Enter Name" required>
+
+    <label for="role">Role</label>
+    <select id="role">
+      <option value="Admin">Admin</option>
+      <option value="Security">Security</option>
+      <option value="Maintenance">Maintenance</option>
+    </select>
+
+    <label for="biometric">Biometric Data</label>
+    <input type="text" id="biometric" placeholder="Enter Biometric Data">
+
+    <button type="button" onclick="addStaff()">Add Staff</button>
+    <button type="button" onclick="removeStaffPrompt()">Remove Staff</button>
+  </form>
+
+  <h2>Staff List</h2>
+  <ul id="staffList"></ul>
+
+  <div class="alert-container">
+    <button type="button" onclick="sendAlert()">Send Alert</button>
+  </div>
+
+  <h2>Generated ID Cards</h2>
+  <div id="idCardsContainer"></div>
+</div>
+
+<script>
+  let staffList = [];
+
+  // Add staff to the list
+  function addStaff() {
+    const id = document.getElementById('staffId').value;
+    const name = document.getElementById('name').value;
+    const role = document.getElementById('role').value;
+    const biometric = document.getElementById('biometric').value;
+
+    if (id && name) {
+      staffList.push({ id, name, role, biometric });
+      updateStaffList();
+      alert('Staff added successfully!');
+      document.getElementById('staffForm').reset();
+    } else {
+      alert('Please fill all required fields.');
+    }
+  }
+
+  // Remove staff from the list by ID
+  function removeStaffPrompt() {
+    const idToRemove = prompt('Enter the Staff ID to remove:');
+    if (idToRemove) {
+      staffList = staffList.filter(staff => staff.id !== idToRemove);
+      updateStaffList();
+      alert('Staff removed (if exists)!');
+    }
+  }
+
+  // Update the displayed staff list
+  function updateStaffList() {
+    const staffListEl = document.getElementById('staffList');
+    staffListEl.innerHTML = '';
+    staffList.forEach(staff => {
+      const listItem = document.createElement('li');
+      listItem.className = 'staff-item';
+      listItem.innerHTML = `
+        ID: ${staff.id}, Name: ${staff.name}, Role: ${staff.role}
+        <button onclick="generateIdCard('${staff.id}')">Generate ID Card</button>
+      `;
+      staffListEl.appendChild(listItem);
+    });
+  }
+
+  // Generate an ID card for the specified staff
+  function generateIdCard(staffId) {
+    const staff = staffList.find(s => s.id === staffId);
+    if (staff) {
+      const idCardContainer = document.getElementById('idCardsContainer');
+      const idCard = document.createElement('div');
+      idCard.className = 'id-card';
+
+      idCard.innerHTML = `
+        <h3>ID Card: ${staff.name}</h3>
+        <p><strong>ID:</strong> ${staff.id}</p>
+        <p><strong>Role:</strong> ${staff.role}</p>
+        <p><strong>Biometric Data:</strong> ${staff.biometric}</p>
+      `;
+
+      idCardContainer.appendChild(idCard);
+      alert(`ID Card generated for ${staff.name}`);
+    } else {
+      alert('Staff not found.');
+    }
+  }
+
+  // Send an alert
+  function sendAlert() {
+    const alertBox = document.createElement('div');
+    alertBox.className = 'alert-box';
+    alertBox.textContent = 'Emergency Alert sent to all staff!';
+    document.querySelector('.alert-container').appendChild(alertBox);
+    setTimeout(() => {
+      alertBox.remove();
+    }, 3000);
+  }
+</script>
+
+        <footer class="text-light">
+            <!-- Start Footer Bottom -->
+            <div class="footer-bottom" style="margin-top:40px ! important">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-8">
+                                <p>
+                                    © Copyright
+                                    2024. All Rights
+                                    Reserved by <a href="#">JSS Mahavidyapeetha</a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 center link mt10">
+                                <a href="#"><i class="fa fa-envelope">&nbsp;</i>itsupport@jssaten.ac.in&nbsp;&nbsp;/
+                                    &nbsp;&nbsp;<i class="fas fa-mobile-alt"> </i> 0120-2400115 Ext. 221</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Footer Bottom -->
+        </footer>
+        <!-- jQuery Frameworks
+       ============================================= -->
+
+    </div>
+</body>
+
+</html>

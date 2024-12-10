@@ -1,0 +1,499 @@
+<html lang="en"
+    class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="text-html; charset=UTF-8; X-Content-Type-Options=nosniff;"
+        http-equiv="content-type">
+    <!-- ========== Page Title ========== -->
+    <title>JSS Academy of Technical Education, Noida</title>
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="/assets/img/jssmvp-web/jssatem-favicon.jpg" type="image/x-icon">
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome.min.css" rel="stylesheet">
+    <link href="flaticon-set.css" rel="stylesheet">
+    <link href="magnific-popup.css" rel="stylesheet">
+    <link href="owl.carousel.min.css" rel="stylesheet">
+    <link href="owl.theme.default.min.css" rel="stylesheet">
+    <link href="animate.css" rel="stylesheet">
+    <link href="bootsnav.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="responsive.css" rel="stylesheet">
+    <link href="jquery-ui-1.10.0.custom.css" rel="stylesheet">
+    <link href="ssmodel.css?$$REVISION$$" rel="stylesheet">
+    <link href="defaultTheme.css" rel="stylesheet" media="screen">
+    <link href="myTheme.css" rel="stylesheet" media="screen">
+    <!-- ========== End Stylesheet ========== -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/assets/js/html5/html5shiv.min.js"></script>
+    <script src="/assets/js/html5/respond.min.js"></script>
+    <![endif]-->
+    <!-- ========== Google Fonts ========== -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
+
+    <script src="../apps/assets/js/jquery-1.12.4.min.js"></script>
+    <script src="../apps/assets/js/bootstrap.min.js"></script>
+    <script src="../apps/assets/js/equal-height.min.js"></script>
+    <script src="../apps/assets/js/jquery.appear.js"></script>
+    <script src="../apps/assets/js/jquery.easing.min.js"></script>
+    <script src="../apps/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="../apps/assets/js/modernizr.custom.13711.js"></script>
+    <script src="../apps/assets/js/owl.carousel.min.js"></script>
+    <script src="../apps/assets/js/wow.min.js"></script>
+    <script src="../apps/assets/js/isotope.pkgd.min.js"></script>
+    <script src="../apps/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="../apps/assets/js/count-to.js"></script>
+    <script src="../apps/assets/js/bootsnav.js"></script>
+    <script src="../apps/assets/js/main.js"></script>
+    <script src="../apps/assets_grid/js_ftable/ssSysSoft.js?$$REVISION$$"></script>
+    <script src="https://kit.fontawesome.com/4987f37603.js" crossorigin="anonymous"></script>
+
+    <script src="assets_grid/js_ftable/jsencrypt.js"></script>
+    <script src="assets_grid/js_ftable/jsencrypt.min.js"></script>
+    <script src="../apps/assets_grid/js_ftable/modelValidation.js" type="text/javascript"></script>
+
+    <script src="../apps/assets_grid/js_ftable/jquery-ui-1.10.0.custom.js" type="text/javascript"
+        language="javascript"></script>
+
+    <style type="text/css">
+        .button_yellow_admi {
+            background: #ffb606 none repeat scroll 0 0;
+            border: medium none;
+            display: inline-block;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            margin-top: 10px;
+            padding: 8px 50px;
+            text-transform: uppercase;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            window.setTimeout(function () {
+                $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                    $(this).remove();
+                });
+            }, 10000);
+        });
+    </script>
+
+    <script language="javascript" type="text/javascript">
+
+        function Validate() {
+
+            return true;
+        }
+
+        function submit(pstrQueryString) {
+            ShowProcessing_ModelForm("<img src='Progress.gif' />&nbsp;&nbsp;Please wait..", parseInt("0"));
+            document.getElementById("form1").action = '?' + pstrQueryString;
+            document.getElementById("form1").submit();
+        }
+
+        function focusUserID() {
+            document.getElementById("txtUserID").focus();
+        }
+
+        function submitForm_CG() {
+            var mstrPassword_S = "";
+            var mstrLoginKey = "";
+            var mintLoginAs = 0;
+            var mintCheckForCG = 0;
+            var mstrPubKey = "";
+
+            mstrLoginKey = document.getElementById("txtHLoginKey").value;
+            mintLoginAs = selectedOptionButtonByGroupName("optLoginAs")
+            mstrPubKey = document.getElementById("txtHPUBRSI").value;
+            if (mintLoginAs.toString().trim().length == 0) {
+                ShowValidation_ModelForm("Select Login as", parseInt("3"));
+            }
+
+            if (document.getElementById("divCKey") != null) {
+                if (document.getElementById("divCKey").style.display == "none") {
+                    mintCheckForCG = 1;
+                }
+            }
+
+            if (mintCheckForCG == 1 && 1 == 1) {
+                if (document.getElementById("txtUserID") != null) {
+                    mstrUserID = document.getElementById("txtUserID").value;
+                    if (!IsValidEntry("txtUserID", 1, 250, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@&*_-.", false, "Enter User Name.")) return false;
+                    if (document.getElementById("txtPassword") != null) {
+                        if (!IsValidEntry("txtPassword", 1, 250, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()+=?/{}_.", false, "Enter Password.")) return false;
+                        //Adding Z because last char is not the special char
+                        //alert(document.getElementById("txtPassword").value);
+                        mstrPassword_S = (document.getElementById("txtPassword").value).replace("#", "[H]") + "Z";
+                        //var mstrPassword_S = document.getElementById("txtPassword").value;
+                        //var mstrPassword = encrypt_RSI(document.getElementById("txtPassword").value, mstrPubKey);
+                        //document.getElementById("txtPassword").value = mstrPassword;
+                    }
+
+                    ShowProcessing_ModelForm("<img src='Progress.gif' />&nbsp;&nbsp;Please wait..", parseInt("0"));
+                    $.ajax({
+                        type: "GET",
+                        url: "College/CollegeHomeShowData.aspx",
+                        cache: false,
+                        data: "FORM=ADMINLOGIN&FORWHAT=CHECKCOLLEGE&USERID=" + mstrUserID
+                            + "&PWD=" + mstrPassword_S + "&LKEY=" + mstrLoginKey
+                            + "&LOGINAS=" + mintLoginAs,
+                        success: function (html) {
+                            CloseProcessing_ModelForm();
+                            if (removeSpaces(html).length > 0) {
+                                if (html.substring(0, 5) == "SHOWC") {
+                                    document.getElementById("divCKey").style.display = "block";
+                                    document.getElementById("divCKey").innerHTML = html.substring(5, html.length);
+                                    return;
+                                }
+                                else if (html.substring(0, 6) == "FAILED") {
+                                    ShowValidation_ModelForm(html.substring(6, html.length), parseInt("3"));
+                                    //alert(html.substring(6, html.length));
+                                    return;
+                                }
+                                else if (html.substring(0, 7) == "SUCCESS") {
+                                    document.getElementById("txtHCKey").value = html.substring(7, html.length);
+                                    submitForm();
+                                }
+                                else {
+                                    return;
+                                }
+                            }
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                    });
+                }
+                else {
+                    submitForm();
+                }
+            }
+            else {
+                submitForm();
+            }
+        }
+
+        function submitForm() {
+            var mstrUserID = "";
+            var mstrPassword = "";
+            var mstrPubKey = "";
+            var mintLoginAs = 0;
+            var mstrLoginKey = "";
+
+            mstrLoginKey = document.getElementById("txtHLoginKey").value;
+            mstrPubKey = document.getElementById("txtHPUBRSI").value;
+            mintLoginAs = selectedOptionButtonByGroupName("optLoginAs")
+
+            if (document.getElementById("txtUserID") != null) {
+                if (!IsValidEntry("txtUserID", 1, 250, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@&*_-.", false, "Enter User Name.")) return false;
+                //mstrUserID = encrypted_AES(document.getElementById("txtUserID").value);
+                //mstrUserID = encrypt_RSI(document.getElementById("txtUserID").value, mstrPubKey);
+                //document.getElementById("txtUserID").value = mstrUserID;
+                //alert("User ID : " + mstrUserID);
+                mstrUserID = document.getElementById("txtUserID").value;
+
+                if (document.getElementById("txtForgotPassword").value == "GO") {
+                    document.getElementById("txtHMode").value = "FORGOT";
+                    document.getElementById("txtHAction").value = "GO";
+                    //document.getElementById("form1").action = '?PWD=FORGOT&DO=GO';
+                }
+                else {
+                    if (!IsValidEntry("txtPassword", 1, 250, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()+=?/{}_.", false, "Enter Password.")) return false;
+                    //mstrPassword = encrypted_AES(document.getElementById("txtPassword").value);
+                    var mstrPassword_S = document.getElementById("txtPassword").value;
+                    mstrPassword = encrypt_RSI(document.getElementById("txtPassword").value, mstrPubKey);
+                    document.getElementById("txtPassword").value = mstrPassword;
+
+                    //alert("Password : " + mstrPassword);
+
+                    document.getElementById("txtHMode").value = "";
+                    document.getElementById("txtHAction").value = "LO";
+                    //document.getElementById("form1").action = '?DO=LO';
+                }
+            }
+            else {
+                if (!IsValidEntry("txtOTP", 1, 250, "0123456789", false, "Enter OTP.")) return false;
+                if (document.getElementById("txtForgotPassword").value == "GO") {
+                    document.getElementById("txtHMode").value = "FORGOT";
+                    document.getElementById("txtHAction").value = "GOOT";
+                }
+                else {
+                    document.getElementById("txtHMode").value = "";
+                    document.getElementById("txtHAction").value = "OT";
+                }
+            }
+            ShowProcessing_ModelForm("<img src='Progress.gif' />&nbsp;&nbsp;Please wait..", parseInt("0"));
+            document.getElementById("form1").submit();
+            return true;
+        }
+
+        function encrypt_RSI(msg, publicKey) {
+            var jsEncrypt = new JSEncrypt();
+            jsEncrypt.setPublicKey(publicKey);
+            var encrypted = jsEncrypt.encrypt(msg);
+            //var base64result = btoa(encrypted);
+            return encrypted;
+        }
+
+        function forgotPassword() {
+            document.getElementById("txtHMode").value = "FORGOT";
+            document.getElementById("txtHAction").value = "";
+            //document.getElementById("form1").action = '?PWD=FORGOT';
+            document.getElementById("form1").submit();
+        }
+
+        function subHome() {
+            document.getElementById("txtHMode").value = "BACK";
+            document.getElementById("txtHAction").value = "";
+            submit('');
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <!-- Preloader Start -->
+        <div class="se-pre-con" style="display: none;"></div>
+        <!-- Preloader Ends -->
+        <!-- Header  ============================================= -->
+        <header id="home">
+            <!-- Start Navigation -->
+            <div class="wrap-sticky" style="height: 98px;">
+                <nav class="navbar navbar-default attr-border navbar-sticky bootsnav on no-full">
+                    <div class="container">
+                        <!-- Start Header Navigation -->
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="https://jssatestoragenoida.blob.core.windows.net/blbcontainer/sdimages/logo.jpg"
+                                    class="logo mt10" alt="Logo">
+                            </a>
+                        </div>
+                        <!-- End Header Navigation 
+             <h3 class="text-primary text-center mt30">JSS Science and Technology University</h3> -->
+                    </div>
+                </nav>
+            </div>
+            <!-- End Navigation -->
+        </header>
+        <!-- End Header -->
+        <!-- Start Login 
+       ============================================= -->
+        <div class="login-area default-padding">
+            <!-- style="background-image: url('img/login-background.jpg')" -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <form method="post" action="./Login.aspx" id="form1" onsubmit="return submitForm();"
+                            class="white-popup-block">
+                            <div class="aspNetHidden">
+                                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                                    value="/wEPDwUJLTI1NTYzMjYzZGRDYkImx5fPHXi+lenQ6Hdtp9sZQ3fAEOb13GFHbY4idw==">
+                            </div>
+
+                            <div class="aspNetHidden">
+
+                                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR"
+                                    value="624B3A22">
+                            </div>
+                            <input id="txtForgotPassword" name="txtForgotPassword" value="SIGNIN" type="hidden">
+
+                            <input id="txtHMode" name="txtHMode" value="" type="hidden">
+                            <input id="txtHAction" name="txtHAction" value="" type="hidden">
+                            <input id="txtHLoginDevice" name="txtHLoginDevice" value="0" type="hidden">
+                            <input id="txtHDeviceResolution" name="txtHDeviceResolution" value="1920 * 1200"
+                                type="hidden">
+                            <input id="txtHLoginKey" name="txtHLoginKey" value="4D53DC06E4-E763-4655-AC6C-82357A4D699E"
+                                type="hidden">
+                            <input id="txtHPUBRSI" name="txtHPUBRSI" value="-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwSwkVnIfB6JJ1P9FM2pj4ZN52AwCmVu5WzbjR/sikfGsoPY2oIjF+SaIXYHjCKIAI5ex/poORWd3H8SDFchRVp5tyh3qbEeoINfnUCSk6Hou0/ALbi9JzORRrflcU2Zr87tHyVJ2uqA6h7/2jspA0i1ZAB5YiK/pdFNGcwZm+XQIDAQAB
+-----END PUBLIC KEY-----
+" type="hidden">
+                            <input id="txtHCKey" name="txtHCKey"
+                                value="hVEzN4RFCI5lWQqnmX867BSG6vYnc3dPGJIbqg8V8K0MvDaR3iPZUhLKOlFX0fkx9T0QlQN9h6lim1+51dnbQoVgZpitpumkcV7Fvo4ROt2j9L1ndKgg9q8RadHXAoUYrcetsFu8lTKJk9FxgkfFFjvGhii2sPFRRbbHWXXCKRc="
+                                type="hidden">
+
+                            <div class="col-md-12">
+                                <h4 class="text-primary text-center">JSS Academy of Technical Education, Noida</h4>
+                                <a href="homepage.html">ADMINISTRATOR LOGIN </a>
+
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-12">
+                                        <p class="text-center"><strong>I am a </strong></p>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4">
+                                        <label for="optLoginAsStudent">
+                                            <input type="radio" name="optLoginAs" id="optLoginAsStudent"
+                                                value="3">Student</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4">
+                                        <label for="optLoginAsParents"><input type="radio" name="optLoginAs"
+                                                id="optLoginAsParents" value="4">Parent</label>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4">
+                                        <label for="optLoginAsStaff"><input type="radio" name="optLoginAs"
+                                                id="optLoginAsStaff" value="5">Staff</label>
+                                    </div>
+                                    <!-- <div class="col-md-3 col-sm-4 col-xs-4">
+                                        <label for="optLoginAsStaff"><input type="radio" name="optLoginAs"
+                                                id="optLoginAsStaff" value="5">Admin</label>
+                                    </div> -->
+                                    
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control autofocus" id="txtUserID"
+                                                name="txtUserID" autocomplete="off" placeholder="User Name" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <input id="txtPassword" name="txtPassword" type="password"
+                                                class="form-control autofocus" autocomplete="off"
+                                                placeholder="Password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" id="divCKey" style="display:none;">
+
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <input type="button" id="myBtn" value="Login" class="button_yellow_admi"
+                                            onclick="submitForm_CG()">
+
+                                        <a href="#" class="lost-pass-link mt30" onclick="forgotPassword()">Reset
+                                            Password ?</a>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12 mt20">
+                                    <div class="row">
+                                        <div style="min-height:20px;">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Login Area -->
+        <footer class="text-light">
+            <!-- Start Footer Bottom -->
+            <div class="footer-bottom" style="margin-top:40px ! important">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-8">
+                                <p>
+                                    © Copyright
+                                    <script>document.write(new Date().getFullYear());</script>2024. All Rights
+                                    Reserved by <a href="#">JSS Mahavidyapeetha</a>
+                                </p>
+                            </div>
+                            <div class="col-md-4 center link mt10">
+                                <a href="#"><i class="fa fa-envelope">&nbsp;</i>itsupport@jssaten.ac.in&nbsp;&nbsp;/
+                                    &nbsp;&nbsp;<i class="fas fa-mobile-alt"> </i> 0120-2400115 Ext. 221</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer Bottom -->
+        </footer>
+        <!-- jQuery Frameworks
+       ============================================= -->
+
+
+
+        <div id="myModalValidation" class="w3-modal w3_modal_padding_280" style="z-index:99999;">
+            <div class="w3-modal-content" style="min-width:500px;max-width:550px;">
+                <div id="Model_Header_Validation" class="w3-modal-header btn-success">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="modal-title text-center text-uppercase" id="MyModelValidationHeading">
+                                <font color="white">Message</font>
+                            </h4>
+                            <span onclick="document.getElementById('myModalValidation').style.display='none'"
+                                class="w3-button w3-display-topright">×</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-modal-body-validation" id="MyModelValidationMsg">
+                </div>
+            </div>
+        </div>
+        <div id="myModalProcessing" class="w3-modal w3_modal_padding_280" style="z-index:99999;">
+            <div class="w3-modal-content" style="min-width:500px;max-width:550px;">
+                <div id="Model_Header_Processing" class="w3-modal-header btn-success">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="modal-title text-center text-uppercase" id="MyModelProcessingHeading">
+                                <font color="white">Processing</font>
+                            </h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-modal-body-validation" id="MyModelProcessingMsg">
+                </div>
+            </div>
+        </div>
+
+        <div id="myModalValidation_ModelForm" class="modal fade ModelValidation_Dialog" style="z-index:99999;"
+            role="dialog">
+            <div class="modal-dialog" style="max-width: 500px;">
+                <div class="modal-content">
+                    <div class="modal-header hidden-xs">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            style="z-index: 3;">×</button>
+                        <h4 class="modal-title text-center" id="MyModelValidation_Heading">
+                            <font color="Black">Message</font>
+                        </h4>
+                    </div>
+                    <div class="modal-body" id="MyModelValidation_Msg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModalProcessing_ModelForm" class="modal fade ModelProcessing_Dialog" style="z-index:99999;"
+            role="dialog">
+            <div class="modal-dialog" style="max-width: 500px;">
+                <div class="modal-content">
+                    <div class="modal-header hidden-xs">
+                        <h4 class="modal-title text-center" id="MyModelProcessing_Heading">
+                            <font color="Black">Processing</font>
+                        </h4>
+                    </div>
+                    <div class="modal-body" id="MyModelProcessing_Msg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
